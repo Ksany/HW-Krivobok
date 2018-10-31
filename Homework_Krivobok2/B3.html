@@ -1,0 +1,31 @@
+<script>
+
+var sum = +prompt("Введите сумму кредита"); // 100000 UAH
+var rate =+prompt("Введите процентную ставку по кредиту в год"); // 10% /YEAR
+var term =+prompt("Введите срок размещения кредита"); // 6 months
+var percents = [];
+
+var rate_months = (rate/100)/12; //1/12 процентной ставки  
+rate_months = +rate_months.toFixed(8); // округление до 8 знаков
+
+var total_in_months=sum*(rate_months+rate_months/(Math.pow(1+rate_months,term)-1));  //ежемесячный платеж состоит из процентов и основного платежа, Math.pow - возведение в степень 
+
+console.log ("Процентная ставка в месяц",rate_months);
+
+var extra_pay=(total_in_months*term)-sum;
+
+for (var i=0; i<term; i++){
+percents[i] = sum * rate_months;
+var sum = sum - (total_in_months - percents[i]);
+var main_pay= total_in_months - percents[i];
+
+console.log("Месяц", (i+1));
+console.log ("Проценты:", percents[i].toFixed(2));
+console.log("Освновной платеж: ", main_pay.toFixed(2));
+console.log ("Суммарный ежемесячный платеж", total_in_months.toFixed(2));
+ }
+
+console.log ("Переплата по кредиту", extra_pay.toFixed(2));
+
+</script> 
+

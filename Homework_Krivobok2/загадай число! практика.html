@@ -1,0 +1,37 @@
+<script>
+
+
+
+var random =Math.floor(Math.random ()*1000);
+
+
+for (var i=0; i<10; i++){
+  var number= +prompt ("Введите число");
+  console.log ("Попытка №", i+1); 
+  console.log ("Вы ввели", number); 
+      
+   if (i==9){
+  alert ('Попытки закончились, мое число было ' + random);
+  console.log ("Попытки закончились, я загадал", random);
+  console.log (random);
+   }
+  else if (number<random){
+     alert ('Мое  число больше'); 
+    console.log ("Мое  число больше"); 
+  }
+  else if (number>random){
+    alert ('Мое  число меньше'); 
+  console.log ("Мое число меньше");
+  }
+  else if (number===random) {
+    alert ('Вы угадали');
+  console.log ("Вы угадали");
+  break;
+  }
+ else {
+  alert ('Введено недопустимое значение');
+  console.log ("Введено недопустимое значение");
+ }
+}
+
+</script> 
