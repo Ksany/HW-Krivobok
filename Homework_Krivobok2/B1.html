@@ -18,7 +18,7 @@
 for  (var j=0; j<phones.length; j++){
 
 for (var i=0; i< phones.length-1; i++){
-if (phones[i][1]>phones[i+1][1]){
+if (parseInt(phones[i][1])>parseInt(phones[i+1][1])) {
     var temp = phones [i][1];
     phones[i][1]=phones[i+1][1];
     phones[i+1][1]=temp;
