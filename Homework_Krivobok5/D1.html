@@ -1,0 +1,43 @@
+<script>
+
+
+     var i=0;
+     var b=0;
+     var max = 99;
+     var min = 10;
+
+         for (var i=0; i<12; i++){
+         var timer1 = new Date();
+         var random1 =Math.floor(Math.random() * (max - min + 1)) + min;
+         var random2 =Math.floor(Math.random() * (max - min + 1)) + min;
+
+         console.log ("Вопрос №", i+1);
+         console.log (random1);
+         console.log (random2);
+
+         var result = random1*random2
+
+         alert ('Вопрос №'+(i+1) +'.'+' Сколько будет ' +  random1 + ' * ' +  random2+ '?');
+         var result_promt = +prompt("Введите ваш вариант ответа");
+         var timer2 = new Date();
+         var tik_tak = timer2 - timer1;
+             if(tik_tak <= 20000){
+
+             console.log (result_promt);
+             console.log (result);
+
+             if (result_promt===result) {
+             console.log ("Правильный ответ");
+             b=b+1;
+             }
+             else if (result_promt!==result) {
+             }
+             } else{
+             console.log ("Вы не уложились в отведенное время");
+             alert('Вы не уложились в отведенное время');
+             }
+         console.log ("Ваша оценка", b);
+         }
+     alert ('Ваша оценка '+b);
+
+ </script> 
