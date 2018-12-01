@@ -1,0 +1,47 @@
+
+<script>
+var sum_start = 1000;
+var round = 0;
+alert('У Вас на счету 1000 грн.');
+
+
+do{
+		var rate_sum =+prompt('Сделайте вашу ставку, (от 1 до 1000 грн.)?');
+		var rate_dice=+prompt('На какое число вы ставите, (от 2 до 12)?');
+		var dice_1 =parseInt(Math.random() *(5) + 1);
+		var dice_2 =parseInt(Math.random() *(5) + 1);
+		var sum_dice = dice_1 + dice_2;
+		
+    if ((dice_1 === dice_2) && (rate_dice === sum_dice)){
+		rate_sum = rate_sum*3;
+		sum_start = sum_start+rate_sum;
+		console.log (rate_sum);
+		console.log (sum_start);
+ 		alert(`Выпало ${dice_1} и ${dice_2}, что в сумме дает число ${sum_dice}. Ваше число ${rate_dice}. Поздравляем. Вы получили утроенную ставку и сумма Вашего выигрыша составляет ${sum_start}.`);
+	}else { (rate_dice < 2) || (rate_dice > 12)){
+					alert ('Введено некорректное число');
+	if (rate_dice === sum_dice){
+		rate_sum = rate_sum*2;
+		sum_start = sum_start+rate_sum;
+		console.log (rate_sum);
+		console.log (sum_start);
+		alert  ('Вы выиграли двойную ставку');
+		alert(`Выпало ${dice_1} и ${dice_2}, что в сумме дает число ${sum_dice}. Ваше число ${rate_dice}. Поздравляем. Вы получили двойную ставку и сумма Вашего выигрыша составляет ${sum_start}.`);
+	}else{ ((rate_sum < 0) || (rate_sum > 1000));
+		alert ('Введено некорректное число');
+	if (rate_dice != sum_dice){
+		sum_start = sum_start-rate_sum;
+		alert ('Вы проиграли');
+		console.log (sum_start);
+		alert(`Выпало ${dice_1} и ${dice_2}, что в сумме дает число ${sum_dice}. Ваше число ${rate_dice}. Ваша ставка вычитается и сумма выиграша составляет ${sum_start}.`);
+	}else { (sum_start == 0){alert(`Вы все проиграли.`);	
+	}
+	}
+	}
+}while((sum_start < 10000) && (points > 0));
+alert(`Вы набрали ${sum_start} грн. Прошли ${round} раундов.`);
+	
+
+
+
+</script>

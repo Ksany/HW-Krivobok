@@ -1,0 +1,99 @@
+
+<script>
+var sum_start = 1000;
+var round = 0;
+alert('У Вас на счету 1000 грн.');
+
+function getRandom () {
+  return parseInt(Math.random() *(5) + 1);
+}
+
+while ((sum_start >0) || (sum_start < 1000)) {
+
+ 		var dice_1 = getRandom();
+		var dice_2 = getRandom();
+	
+		var sum_dice = dice_1 + dice_2;
+
+		var rate_sum =+prompt('Сделайте вашу ставку, (от 1 до 1000 грн.)?');
+		rate_sum = parseInt(rate_sum);
+
+		var rate_dice=+prompt('На какое число вы ставите, (от 2 до 12)?');
+		rate_dice = parseInt(rate_dice);
+
+		round = ++round;
+	 
+
+     var max = 7;
+var min = 1;
+var points = 1000;
+var round = 0;
+
+    alert(` У Вас на счету 1000 грн.`);
+	
+do{
+    var rate = +prompt(`Игра!!!  Сделайте Вашу ставку.`);
+	rate = parseInt(rate);
+	
+	if((rate < 1) || (rate > points)){
+	alert(`Повторите ввод. У Вас недостаточно денег на счете.`);
+	}else{
+    var product = +prompt(`Игра!!!  Назовите число от 1 до 12.`);
+    product = parseInt(product);
+	
+	if((product < 1) || (product > 12)){
+	alert(`Повторите ввод.`);
+
+	}else{
+	round = ++round;
+	
+    var value1 = parseInt(Math.random() * (max - min) + min);
+    var value2 = parseInt(Math.random() * (max - min) + min);
+
+     
+  
+  if(((value1+value2) === product) && (value1===value2)){
+  
+  rate = rate * 3;
+  points = points + rate;
+  
+  alert(`Выпало ${value1} и ${value2}, что в сумме дает число ${value1+value2}. Ваше число ${product}. Поздравляем. Вы получили утроенную ставку и сумма Вашего выигрыша составляет ${points}.`);
+
+
+  }else if((value1+value2) === product){
+  rate = rate * 2;
+  points = points + rate;
+  alert(`Выпало ${value1} и ${value2}, что дает число ${value1+value2}. Ваше число ${product}. Ваша ставка удвоенная и сумма выиграша составляет ${points}`);
+
+  }else{
+  points = points - rate;
+  alert(`Выпало ${value1} и ${value2}, что дает число ${value1+value2}. Ваше число ${product}. Ваша ставка вычитается и сумма выиграша составляет ${points}`);
+  }
+  }
+  }
+  
+
+  
+  }while((points < 1500) && (points > 0));
+  
+ 
+  
+  alert(`Вы набрали ${points} баллов. Прошли ${round} раундов.`);
+ 
+
+</script>
+else if (sum_start >= 10000){
+		alert(`Вы выиграли за ${round}`)
+		}		
+		else if((rate_dice < 2) || (rate_dice > 12)){
+					alert ('Введено некорректное число');
+						 		}
+				 else if ((rate_sum < 0) || (rate_sum > 1000)){
+					alert ('Введено некорректное число');
+				 }		
+				 else if (sum_start == 0){alert(`Вы все проиграли.`)}
+				 else 
+alert(`Вы набрали ${sum_start} грн. Прошли ${round} раундов.`);
+	}
+
+
